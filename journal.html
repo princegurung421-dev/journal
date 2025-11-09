@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Gurung - Weekly Journal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <button class="navbar-toggle" aria-label="Toggle navbar">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="journal.html">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        <span class="nav-text">Journal</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html">
+                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">
+                        <span class="nav-icon"><i class="fas fa-user"></i></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- realtime clock shown in the sidebar -->
+        <div class="site-clock" id="site-clock" aria-live="polite">
+            <div id="clockTime">--:--:--</div>
+            <div id="clockDate">Loading date...</div>
+            <div id="locations" class="site-locations">Loading locations...</div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <button class="theme-toggle-mobile" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main class="container">
+        <section class="content-section">
+            <h1>Weekly Learning Journal of Prince Gurung</h1>
+            <p>This section captures the progress and technical reflections throughout the unit.</p>
+            
+            <div class="journal-entries">
+                <article class="journal-card active">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Week 2</span>
+                            <h2>Frontend Fundamentals Reflection</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="journal-meta">
+                            <span><i class="far fa-calendar"></i> October 2025</span>
+                            <span><i class="fas fa-tag"></i> HTML & CSS</span>
+                        </div>
+                        <p>
+                            This week focused on pure HTML structure and CSS responsiveness. The key takeaway was implementing mobile-first design and mastering flexible layouts with Flexbox.
+                        </p>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-lightbulb"></i> Key Learnings</h4>
+                            <ul>
+                                <li>Mobile-first responsive design principles</li>
+                                <li>Flexbox and Grid layout systems</li>
+                                <li>CSS variables for maintainable styling</li>
+                            </ul>
+                        </div>
+                        <div class="journal-next">
+                            <strong>What's Next:</strong> Integrating JavaScript to add interactive components and enhance PWA functionality.
+                        </div>
+                    </div>
+                </article>
+
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Week 3</span>
+                            <h2>JavaScript Features & Interactivity</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="journal-meta">
+                            <span><i class="far fa-calendar"></i> <span id="week3-date">(current date)</span></span>
+                            <span><i class="fas fa-tag"></i> JavaScript</span>
+                        </div>
+                        <p>
+                            Week 3 introduced JavaScript fundamentals and dynamic functionality. Learned to manipulate the DOM, handle events, and create interactive user experiences.
+                        </p>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-code"></i> Technical Skills</h4>
+                            <ul>
+                                <li>DOM manipulation and traversal</li>
+                                <li>Event listeners and handling</li>
+                                <li>Working with Date objects and timers</li>
+                                <li>Asynchronous JavaScript basics</li>
+                            </ul>
+                        </div>
+                         <div class="journal-next">
+                            <strong>What's Next:</strong> API Integrations.
+                        </div>
+                    </div>
+                </article>
+
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Week 4</span>
+                            <h2>API Integrations</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="journal-meta">
+                            <span><i class="far fa-calendar"></i> November 2025</span>
+                            <span><i class="fas fa-tag"></i> APIs</span>
+                        </div>
+                        <p>
+                            This week focused on integrating various APIs to make the PWA more interactive and feature-rich. Explored browser APIs and third-party integrations.
+                        </p>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-plug"></i> APIs Implemented</h4>
+                            <ul>
+                                <li><strong>Storage API</strong> — localStorage for caching location data (10 min TTL)</li>
+                                <li><strong>Geolocation API</strong> — User location with IP fallback</li>
+                                <li><strong>YouTube IFrame API</strong> — Embedded video player integration</li>
+                                <li><strong>Fetch API</strong> — Making HTTP requests for data</li>
+                            </ul>
+                        </div>
+                        <div class="journal-next">
+                            <strong>What's Next:</strong> Python Setup & Fundamentals
+                        </div>
+                    </div>
+                </article>
+
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Week 5</span>
+                            <h2>Python Setup & Fundamentals</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="journal-meta">
+                            <span><i class="far fa-calendar"></i> November 2025</span>
+                            <span><i class="fas fa-tag"></i> Python</span>
+                        </div>
+                        <p>
+                            This week marked the beginning of Python development. Set up the Python environment and learned fundamental programming concepts in Python.
+                        </p>
+                        <div class="journal-highlight">
+                            <h4><i class="fab fa-python"></i> Python Setup</h4>
+                            <ul>
+                                <li>Installing Python 3.x and pip package manager</li>
+                                <li>Setting up virtual environments (venv)</li>
+                                <li>Configuring VS Code for Python development</li>
+                                <li>Understanding Python's REPL and interactive shell</li>
+                            </ul>
+                        </div>
+                        <div class="journal-next">
+                            <strong>Next Steps:</strong> Frontend and Backend
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- clock script -->
+    <script src="js/clock.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

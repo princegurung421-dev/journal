@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Prince Gurung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <button class="navbar-toggle" aria-label="Toggle navbar">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="journal.html">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        <span class="nav-text">Journal</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html">
+                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="about.html">
+                        <span class="nav-icon"><i class="fas fa-user"></i></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- realtime clock shown in the sidebar -->
+        <div class="site-clock" id="site-clock" aria-live="polite">
+            <div id="clockTime">--:--:--</div>
+            <div id="clockDate">Loading date...</div>
+            <div id="locations" class="site-locations">Loading locations...</div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <button class="theme-toggle-mobile" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main class="container">
+        <section class="profile-section">
+            <img src="images/profile.jpeg" alt="Prince Gurung" class="profile-image">
+            <div class="profile-info">
+                <h1>Prince Gurung</h1>
+                <p style="font-size: 1.1rem; color: var(--primary-color); margin-bottom: 1rem;">
+                    <strong>BSc (Hons) Computer Science Student</strong>
+                </p>
+                <p>
+                    I am a dedicated student with a keen interest in <b>Mobile Application Development</b> and responsive web design.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>My Focus</h2>
+            <p>
+                My current focus is on building robust and accessible applications, starting with a strong foundation in modern frontend technologies like HTML, CSS, and JavaScript. I am passionate about creating clean code and intuitive user interfaces.
+            </p>
+            
+            <h2>Skills & Interests</h2>
+            <ul>
+                <li>Mobile Application Development</li>
+                <li>Responsive Web Design</li>
+                <li>Progressive Web Apps (PWA)</li>
+                <li>Frontend Technologies (HTML, CSS, JavaScript)</li>
+                <li>API Integration</li>
+            </ul>
+            
+            <h2>Contact Information</h2>
+            <p>📧 Email: <a href="mailto:pg67709@gmail.com">pg67709@gmail.com</a></p>
+        </section>
+    </main>
+    <script src="js/clock.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

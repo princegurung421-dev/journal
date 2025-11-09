@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Gurung - Learning Journal Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <button class="navbar-toggle" aria-label="Toggle navbar">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="index.html">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="journal.html">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        <span class="nav-text">Journal</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html">
+                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">
+                        <span class="nav-icon"><i class="fas fa-user"></i></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- realtime clock shown in the sidebar -->
+        <div class="site-clock" id="site-clock" aria-live="polite">
+            <div id="clockTime">--:--:--</div>
+            <div id="clockDate">Loading date...</div>
+            <div id="locations" class="site-locations">Loading locations...</div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <button class="theme-toggle-mobile" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main class="container">
+        <section class="content-section">
+            <h1>Welcome to My Learning Journal!</h1>
+            
+            <h2>Hello, I'm Prince Gurung.</h2>
+            <p>
+                I'm a student of BSc (Hons) Computer Science, and this space documents my journey through the Mobile Application Development unit.
+            </p>
+
+            <p>
+                This PWA is being built as a <b>learning log</b> to track my weekly skills, a <b>personal profile</b> to introduce myself, and a <b>portfolio</b> to showcase my creative computing and technical work. This week, the focus was establishing the fully responsive structure using HTML and CSS.
+            </p>
+
+            <h3>My Lab 2 Goal</h3>
+            <p>
+                The primary goal was to build the fundamental skeleton and design layout using mobile-first principles, ensuring the design scales beautifully from a small phone to a large desktop screen.
+            </p>
+            
+        </section>
+        
+        <aside class="content-section">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="journal.html">Read My Latest Reflection</a></li>
+                <li><a href="projects.html">See My Work</a></li>
+                <li><a href="about.html">Connect with Me</a></li>
+            </ul>
+        </aside>
+    </main>
+    <script src="js/clock.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

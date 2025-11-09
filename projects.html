@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Gurung - Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <button class="navbar-toggle" aria-label="Toggle navbar">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="journal.html">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        <span class="nav-text">Journal</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="projects.html">
+                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">
+                        <span class="nav-icon"><i class="fas fa-user"></i></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- realtime clock shown in the sidebar -->
+        <div class="site-clock" id="site-clock" aria-live="polite">
+            <div id="clockTime">--:--:--</div>
+            <div id="clockDate">Loading date...</div>
+            <div id="locations" class="site-locations">Loading locations...</div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <button class="theme-toggle-mobile" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main class="container">
+        <section class="content-section">
+            <h1>Prince Gurung's Technical Portfolio</h1>
+            <p>A showcase of creative computing and development work completed during my course.</p>
+            
+            <article>
+                <h2>PWA Framework</h2>
+                <p>
+                    <b>Technologies:</b> HTML5, CSS3 (Mobile-First, Flexbox/Grid).
+                    This project is the PWA structure itself, demonstrating responsive frontend fundamentals.
+                </p>
+            </article>
+            
+            <article id="youtube-section" class="card">
+                <h2>Youtube API Demo</h2>
+                <p>Watch a short demo video below. Use the controls to play or pause.</p>
+                <div class="yt-player" aria-label="Featured video">
+                    <div id="yt-player-iframe" class="yt-iframe"></div>
+                    <div class="yt-controls">
+                        <button id="yt-play" class="btn">Play</button>
+                        <button id="yt-pause" class="btn">Pause</button>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+    </main>
+    <script src="js/clock.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/thirdparty.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
