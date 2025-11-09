@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Gurung - Personal Reflections</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <button class="navbar-toggle" aria-label="Toggle navbar">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="journal.html">
+                        <span class="nav-icon"><i class="fas fa-book"></i></span>
+                        <span class="nav-text">Journal</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="reflections.html">
+                        <span class="nav-icon"><i class="fas fa-pen-fancy"></i></span>
+                        <span class="nav-text">Reflections</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html">
+                        <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                        <span class="nav-text">Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html">
+                        <span class="nav-icon"><i class="fas fa-user"></i></span>
+                        <span class="nav-text">About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- realtime clock shown in the sidebar -->
+        <div class="site-clock" id="site-clock" aria-live="polite">
+            <div id="clockTime">--:--:--</div>
+            <div id="clockDate">Loading date...</div>
+            <div id="locations" class="site-locations">Loading locations...</div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <button class="theme-toggle-mobile" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main class="container">
+        <section class="content-section">
+            <div class="journal-header-section">
+                <div>
+                    <h1><i class="fas fa-pen-fancy"></i> Personal Reflections</h1>
+                    <p>Create and manage your learning reflections directly from the browser.</p>
+                </div>
+                <div class="reflection-counter">
+                    <i class="fas fa-notebook"></i>
+                    <span id="reflection-count">0</span> Reflections
+                </div>
+            </div>
+
+            <!-- Add New Reflection Form -->
+            <div class="add-reflection-section">
+                <button id="toggle-form-btn" class="toggle-form-btn">
+                    <i class="fas fa-plus-circle"></i> Add New Reflection
+                </button>
+                
+                <div id="reflection-form-container" class="reflection-form-container" style="display: none;">
+                    <form id="reflection-form" class="reflection-form">
+                        <h2><i class="fas fa-edit"></i> Create Reflection</h2>
+                        
+                        <div class="form-group">
+                            <label for="reflection-title">
+                                <i class="fas fa-heading"></i> Title *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="reflection-title" 
+                                name="title" 
+                                required 
+                                placeholder="Enter reflection title..."
+                                maxlength="200"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reflection-category">
+                                <i class="fas fa-tag"></i> Category
+                            </label>
+                            <select id="reflection-category" name="category">
+                                <option value="General">General</option>
+                                <option value="Python">Python</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="HTML & CSS">HTML & CSS</option>
+                                <option value="APIs">APIs</option>
+                                <option value="Database">Database</option>
+                                <option value="Problem Solving">Problem Solving</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reflection-content">
+                                <i class="fas fa-align-left"></i> Reflection Content *
+                            </label>
+                            <textarea 
+                                id="reflection-content" 
+                                name="content" 
+                                required 
+                                rows="8"
+                                placeholder="Write your reflection here... Share what you learned, challenges you faced, and insights you gained."
+                            ></textarea>
+                            <div class="char-counter">
+                                <span id="content-char-count">0</span> characters
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-lightbulb"></i> Key Learnings (Optional)
+                            </label>
+                            <div id="learnings-container">
+                                <div class="learning-input-group">
+                                    <input 
+                                        type="text" 
+                                        class="learning-input" 
+                                        placeholder="Add a key learning..."
+                                        maxlength="150"
+                                    >
+                                    <button type="button" class="remove-learning-btn" style="display: none;">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button type="button" id="add-learning-btn" class="add-learning-btn">
+                                <i class="fas fa-plus"></i> Add Another Learning
+                            </button>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-save"></i> Save Reflection
+                            </button>
+                            <button type="button" id="cancel-form-btn" class="cancel-btn">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+
+                        <div id="form-message" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="journal-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search reflections by keyword...">
+                </div>
+                <div class="control-buttons">
+                    <button id="refresh-reflections" class="control-btn" title="Refresh reflections">
+                        <i class="fas fa-sync"></i> Refresh
+                    </button>
+                    <button id="export-reflections" class="control-btn primary" title="Export reflections to JSON">
+                        <i class="fas fa-download"></i> Export
+                    </button>
+                    <button id="import-reflections" class="control-btn" title="Import reflections from JSON">
+                        <i class="fas fa-upload"></i> Import
+                    </button>
+                    <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Reflections Display -->
+            <div class="reflections-section">
+                <h2 class="section-title">
+                    <i class="fas fa-list"></i> All Reflections
+                </h2>
+                <div id="dynamic-reflections" class="journal-entries">
+                    <!-- Dynamic content loaded here -->
+                    <div class="loading-message">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading reflections...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/clock.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/reflections.js"></script>
+    <script src="js/reflection-form.js"></script>
+</body>
+</html>

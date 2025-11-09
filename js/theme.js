@@ -98,10 +98,15 @@
     setNavbarState(newState);
   }
   
-  // Initialize navbar state (only on desktop)
+  // Initialize navbar state (only on desktop) - Default to expanded
   if (window.innerWidth >= 768) {
     const savedState = getNavbarState();
-    applyNavbarState(savedState);
+    // If no saved state, default to expanded
+    applyNavbarState(savedState || 'expanded');
+    // Save expanded as default if not set
+    if (!savedState) {
+      setNavbarState('expanded');
+    }
   }
   
   // Event listeners setup
