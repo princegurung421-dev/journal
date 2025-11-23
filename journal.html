@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="navbar">
         <button class="navbar-toggle" aria-label="Toggle navbar">
@@ -85,7 +87,8 @@
                             <span><i class="fas fa-tag"></i> HTML & CSS</span>
                         </div>
                         <p>
-                            This week focused on pure HTML structure and CSS responsiveness. The key takeaway was implementing mobile-first design and mastering flexible layouts with Flexbox.
+                            This week focused on pure HTML structure and CSS responsiveness. The key takeaway was
+                            implementing mobile-first design and mastering flexible layouts with Flexbox.
                         </p>
                         <div class="journal-highlight">
                             <h4><i class="fas fa-lightbulb"></i> Key Learnings</h4>
@@ -96,7 +99,8 @@
                             </ul>
                         </div>
                         <div class="journal-next">
-                            <strong>What's Next:</strong> Integrating JavaScript to add interactive components and enhance PWA functionality.
+                            <strong>What's Next:</strong> Integrating JavaScript to add interactive components and
+                            enhance PWA functionality.
                         </div>
                     </div>
                 </article>
@@ -117,7 +121,8 @@
                             <span><i class="fas fa-tag"></i> JavaScript</span>
                         </div>
                         <p>
-                            Week 3 introduced JavaScript fundamentals and dynamic functionality. Learned to manipulate the DOM, handle events, and create interactive user experiences.
+                            Week 3 introduced JavaScript fundamentals and dynamic functionality. Learned to manipulate
+                            the DOM, handle events, and create interactive user experiences.
                         </p>
                         <div class="journal-highlight">
                             <h4><i class="fas fa-code"></i> Technical Skills</h4>
@@ -128,7 +133,7 @@
                                 <li>Asynchronous JavaScript basics</li>
                             </ul>
                         </div>
-                         <div class="journal-next">
+                        <div class="journal-next">
                             <strong>What's Next:</strong> API Integrations.
                         </div>
                     </div>
@@ -150,12 +155,14 @@
                             <span><i class="fas fa-tag"></i> APIs</span>
                         </div>
                         <p>
-                            This week focused on integrating various APIs to make the PWA more interactive and feature-rich. Explored browser APIs and third-party integrations.
+                            This week focused on integrating various APIs to make the PWA more interactive and
+                            feature-rich. Explored browser APIs and third-party integrations.
                         </p>
                         <div class="journal-highlight">
                             <h4><i class="fas fa-plug"></i> APIs Implemented</h4>
                             <ul>
-                                <li><strong>Storage API</strong> — localStorage for caching location data (10 min TTL)</li>
+                                <li><strong>Storage API</strong> — localStorage for caching location data (10 min TTL)
+                                </li>
                                 <li><strong>Geolocation API</strong> — User location with IP fallback</li>
                                 <li><strong>YouTube IFrame API</strong> — Embedded video player integration</li>
                                 <li><strong>Fetch API</strong> — Making HTTP requests for data</li>
@@ -171,7 +178,7 @@
                     <div class="journal-header">
                         <div class="journal-title-section">
                             <span class="week-badge">Week 5</span>
-                            <h2>Python Setup & Fundamentals</h2>
+                            <h2>Python & JSON Backend Integration</h2>
                         </div>
                         <button class="journal-toggle" aria-label="Toggle entry">
                             <i class="fas fa-chevron-down"></i>
@@ -179,23 +186,73 @@
                     </div>
                     <div class="journal-content">
                         <div class="journal-meta">
-                            <span><i class="far fa-calendar"></i> November 2025</span>
-                            <span><i class="fas fa-tag"></i> Python</span>
+                            <span><i class="far fa-calendar"></i> November 23, 2025</span>
+                            <span><i class="fas fa-tag"></i> Python & JSON</span>
                         </div>
                         <p>
-                            This week marked the beginning of Python development. Set up the Python environment and learned fundamental programming concepts in Python.
+                            This week introduced Python as a backend tool for managing JSON data storage. The focus was
+                            on creating a file-based storage system that bridges the gap between browser-based storage
+                            and server-side data persistence. I implemented a Python script to manage reflection entries
+                            and integrated it with the PWA's frontend.
                         </p>
                         <div class="journal-highlight">
-                            <h4><i class="fab fa-python"></i> Python Setup</h4>
+                            <h4><i class="fab fa-python"></i> Python Implementation</h4>
                             <ul>
-                                <li>Installing Python 3.x and pip package manager</li>
-                                <li>Setting up virtual environments (venv)</li>
-                                <li>Configuring VS Code for Python development</li>
-                                <li>Understanding Python's REPL and interactive shell</li>
+                                <li><strong>Environment Setup:</strong> Configured Python 3.13.7 in VS Code with proper
+                                    interpreter path</li>
+                                <li><strong>JSON File Management:</strong> Created save_entry.py to handle CRUD
+                                    operations on reflections.json</li>
+                                <li><strong>Data Structure:</strong> Designed JSON schema with id, title, category,
+                                    content, learnings, formatted_date, and timestamp fields</li>
+                                <li><strong>Input Validation:</strong> Implemented user input handling with proper error
+                                    checking and data formatting</li>
+                            </ul>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-database"></i> JSON Storage System</h4>
+                            <ul>
+                                <li><strong>File Structure:</strong> Created /backend/reflections.json for persistent
+                                    storage</li>
+                                <li><strong>Data Format:</strong> Array of reflection objects with consistent schema
+                                </li>
+                                <li><strong>Frontend Integration:</strong> JavaScript fetch() API loads and displays
+                                    JSON data dynamically</li>
+                                <li><strong>Cache Busting:</strong> Implemented timestamp query parameter to prevent
+                                    stale data</li>
+                            </ul>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-star"></i> Extra Features Implemented</h4>
+                            <ul>
+                                <li><strong>Export Functionality:</strong> Download reflections as JSON file with
+                                    date-stamped filename</li>
+                                <li><strong>Import Functionality:</strong> Upload and merge external JSON reflection
+                                    files</li>
+                                <li><strong>Search/Filter:</strong> Real-time keyword search across title, content,
+                                    category, and learnings</li>
+                                <li><strong>Reflection Counter:</strong> Dynamic count display showing total number of
+                                    reflections</li>
+                                <li><strong>Interactive Form:</strong> Browser-based form to create new reflections with
+                                    validation</li>
+                            </ul>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-lightbulb"></i> Key Learnings</h4>
+                            <ul>
+                                <li>JSON file storage provides persistence beyond browser storage but requires
+                                    server/local access</li>
+                                <li>Python's json module makes it easy to read, modify, and write JSON data</li>
+                                <li>CORS restrictions prevent loading local JSON files via file:// protocol - requires
+                                    HTTP server</li>
+                                <li>GitHub Pages serves static files, so Python scripts don't run - JSON must be
+                                    pre-generated</li>
+                                <li>Combining Python for data management with JavaScript for UI creates a powerful
+                                    workflow</li>
                             </ul>
                         </div>
                         <div class="journal-next">
-                            <strong>Next Steps:</strong> Frontend and Backend
+                            <strong>What's Next:</strong> Exploring database integration and advanced Python backend
+                            features
                         </div>
                     </div>
                 </article>
@@ -209,4 +266,5 @@
     <script src="js/location.js"></script>
     <script src="js/theme.js"></script>
 </body>
+
 </html>

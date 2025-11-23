@@ -1,1 +1,72 @@
-[]
+[
+    {
+        "id": 1,
+        "title": "Building My First Progressive Web App",
+        "category": "JavaScript",
+        "content": "Today I completed my first Progressive Web App (PWA) and it was an incredible learning experience. I learned how service workers enable offline functionality and how the manifest.json file makes the app installable. The most challenging part was understanding the service worker lifecycle and cache strategies. I initially struggled with cache versioning, but after reading the documentation and experimenting, I realized the importance of proper cache management to avoid serving stale content. This project taught me that PWAs bridge the gap between web and native apps, offering users a seamless experience regardless of network conditions.",
+        "learnings": [
+            "Service workers run separately from the main thread",
+            "Cache-first strategy is great for static assets",
+            "manifest.json controls how the app appears when installed",
+            "Testing offline functionality requires proper DevTools usage"
+        ],
+        "formatted_date": "November 20, 2025",
+        "timestamp": "2025-11-20T14:30:00+05:45"
+    },
+    {
+        "id": 2,
+        "title": "Understanding Asynchronous JavaScript",
+        "category": "JavaScript",
+        "content": "Asynchronous programming was confusing at first, but today everything clicked. I spent time working with Promises, async/await, and understanding the event loop. The key insight was realizing that JavaScript is single-threaded but can handle asynchronous operations through the event loop and callback queue. I built a simple API fetcher that handles multiple concurrent requests and properly manages errors. The difference between Promise.all() and Promise.race() became clear through practical examples. I also learned about Promise.allSettled() which is perfect when you want all promises to complete regardless of rejection.",
+        "learnings": [
+            "async/await is syntactic sugar over Promises",
+            "Always handle errors with try/catch in async functions",
+            "The event loop manages asynchronous operations",
+            "Promise.all() fails fast, Promise.allSettled() waits for all"
+        ],
+        "formatted_date": "November 18, 2025",
+        "timestamp": "2025-11-18T16:45:00+05:45"
+    },
+    {
+        "id": 3,
+        "title": "CSS Grid vs Flexbox: When to Use Each",
+        "category": "HTML & CSS",
+        "content": "I've been using both CSS Grid and Flexbox, but today I really understood when to use each. Flexbox is perfect for one-dimensional layouts - either rows or columns. Grid shines when you need two-dimensional control. I redesigned my portfolio layout using Grid for the overall page structure and Flexbox for component internals like navigation bars and card layouts. The 'fr' unit in Grid is incredibly powerful for responsive designs. I also discovered that combining both technologies in the same project is not only acceptable but often the best approach. Grid for macro layouts, Flexbox for micro layouts.",
+        "learnings": [
+            "Grid is for 2D layouts, Flexbox for 1D",
+            "Use 'fr' units for flexible grid sizing",
+            "gap property works in both Grid and Flexbox",
+            "Combining both technologies creates powerful layouts"
+        ],
+        "formatted_date": "November 15, 2025",
+        "timestamp": "2025-11-15T10:20:00+05:45"
+    },
+    {
+        "id": 4,
+        "title": "Debugging Skills: Finding the Root Cause",
+        "category": "Problem Solving",
+        "content": "Today I spent 3 hours debugging an issue where my reflections weren't loading. Initially, I thought it was a JavaScript error, but the console was clean. I learned to use the Network tab in DevTools and discovered CORS errors when loading local JSON files. This taught me about browser security policies and the same-origin policy. The solution was to run a local development server instead of opening files directly. This experience reinforced the importance of systematic debugging: check the console, network tab, and understand the error messages before jumping to solutions. I also learned about the file:// protocol limitations.",
+        "learnings": [
+            "CORS prevents loading local files in browsers",
+            "Use DevTools Network tab to diagnose loading issues",
+            "Local development servers solve file:// protocol issues",
+            "Read error messages carefully before googling"
+        ],
+        "formatted_date": "November 12, 2025",
+        "timestamp": "2025-11-12T18:15:00+05:45"
+    },
+    {
+        "id": 5,
+        "title": "Working with REST APIs and Fetch",
+        "category": "APIs",
+        "content": "I integrated my first REST API today and learned so much about HTTP methods, status codes, and request/response cycles. Using the Fetch API felt natural after understanding Promises. I learned that GET requests retrieve data, POST creates new resources, PUT updates existing ones, and DELETE removes them. Status codes like 200 (success), 404 (not found), and 500 (server error) became meaningful. I also implemented proper error handling for network failures and invalid responses. The most important lesson was always checking response.ok before parsing JSON to avoid unexpected errors.",
+        "learnings": [
+            "Fetch returns a Promise that resolves to a Response object",
+            "Always check response.ok before parsing JSON",
+            "HTTP methods (GET, POST, PUT, DELETE) have specific purposes",
+            "Status codes communicate what happened with the request"
+        ],
+        "formatted_date": "November 10, 2025",
+        "timestamp": "2025-11-10T13:00:00+05:45"
+    }
+]
