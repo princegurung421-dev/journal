@@ -257,6 +257,127 @@
                     </div>
                 </article>
 
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Week 6</span>
+                            <h2>Flask Backend Integration & Frontend-Backend Connection</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="journal-meta">
+                            <span><i class="far fa-calendar"></i> December 2025</span>
+                            <span><i class="fas fa-tag"></i> Flask & Backend</span>
+                        </div>
+                        <p>
+                            This week focused on integrating Flask as a backend framework for the Learning Journal PWA. 
+                            The primary goal was to establish a connection between the frontend (browser interface) and 
+                            backend (server) to transform the PWA from a static, local document into a dynamic, persistent 
+                            web application. I implemented RESTful API endpoints using Flask and connected them to the 
+                            frontend using JavaScript's Fetch API.
+                        </p>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-question-circle"></i> Why is the frontend–backend connection important?</h4>
+                            <p>
+                                The connection between the frontend (the browser interface) and the backend (the server) is 
+                                essential because it moves the PWA from being a static, local document to a true, dynamic 
+                                application. Before this lab, my journal entries were only saved to my browser's localStorage. 
+                                That data was locked to that specific computer and browser; it wasn't persistent or shareable. 
+                                The backend, built with Flask, provides the persistence by saving the data to a file 
+                                (reflections.json) on the server. This makes the application useful because the data is now 
+                                secure, available from any device, and can be managed centrally, which is the whole point of 
+                                a web application.
+                            </p>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-code"></i> Which HTTP methods did you use in Flask, and why?</h4>
+                            <p>
+                                I implemented three HTTP methods in my Flask backend: <strong>GET</strong>, <strong>POST</strong>, 
+                                and <strong>DELETE</strong>.
+                            </p>
+                            <ul>
+                                <li><strong>GET</strong> was used for retrieving data. When the PWA loads, the JavaScript makes 
+                                    a GET request to <code>/api/reflections</code> to load and display all saved journal entries.</li>
+                                <li><strong>POST</strong> was used for creating new data. When I submit the journal form, the 
+                                    JavaScript sends a POST request with the new entry's data to <code>/api/add_reflection</code> 
+                                    to save it to the reflections.json file.</li>
+                                <li><strong>DELETE</strong> was used for my extra feature. It's the correct method for telling 
+                                    the server to remove a specific entry from the data file.</li>
+                            </ul>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-database"></i> What is the difference between using Flask to store and load JSON data and reading JSON directly in the browser?</h4>
+                            <p>
+                                The main difference is about data management and persistence.
+                            </p>
+                            <p>
+                                When reading JSON directly in the browser (or using localStorage), the data is client-side. 
+                                The browser handles everything. This is simple, but the data isn't persistent across devices 
+                                and can't be shared. Any changes are local.
+                            </p>
+                            <p>
+                                By using Flask, the data is server-side. The browser only sends a request to the server, and 
+                                Flask manages the data file (reflections.json). This ensures the data is persistent, safe, 
+                                and available to anyone accessing the application. It shifts the responsibility for data 
+                                integrity and security away from the user's device and onto the controlled server environment.
+                            </p>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-cloud"></i> Did you face any difficulties when running your project on PythonAnywhere? How did you handle them?</h4>
+                            <p>
+                                I definitely hit a few snags, mostly related to file paths.
+                            </p>
+                            <p>
+                                My biggest issue was the paths for my static assets (CSS/JS). When I first loaded the page, it 
+                                was just plain HTML because the server couldn't find my stylesheet and script files. I initially 
+                                used relative paths like <code>href="css/style.css"</code>, but Flask requires template rendering. 
+                                I solved this by going into my HTML file and replacing all the static file links with the correct 
+                                template syntax: <code>{{ url_for('static', filename='css/style.css') }}</code>. After changing 
+                                all the links and remembering to reload the web app in the PythonAnywhere 'Web' tab, the styles 
+                                finally loaded.
+                            </p>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-star"></i> What extra feature did you build into your PWA with Flask, and why did you add it?</h4>
+                            <p>
+                                For the extra feature, I added the ability to <strong>Delete an existing reflection</strong>.
+                            </p>
+                            <p>
+                                To implement this, I had to update two things: first, I added a "Delete" button next to every 
+                                reflection in the frontend. Second, I created a new <code>@app.route()</code> in flask_app.py 
+                                that specifically handled the DELETE request. The JavaScript now sends a fetch request using the 
+                                DELETE method along with a unique identifier for the reflection. This backend route removes that 
+                                entry from the list and overwrites the reflections.json file.
+                            </p>
+                            <p>
+                                I chose the delete feature because a journal is a personal tool that requires maintenance. If I 
+                                accidentally make a duplicate entry or write something that's no longer relevant, I need a way 
+                                to clean up the data. It was essential for moving my PWA toward a fully functional and practical 
+                                application.
+                            </p>
+                        </div>
+                        <div class="journal-highlight">
+                            <h4><i class="fas fa-lightbulb"></i> Key Learnings</h4>
+                            <ul>
+                                <li>Flask's route decorators make API creation straightforward and intuitive</li>
+                                <li>RESTful design principles improve API usability and follow web standards</li>
+                                <li>Fetch API enables seamless frontend-backend communication</li>
+                                <li>Template rendering with <code>url_for()</code> is essential for Flask static file serving</li>
+                                <li>Server-side data management provides persistence and security advantages</li>
+                                <li>PythonAnywhere deployment requires proper file structure and WSGI configuration</li>
+                                <li>HTTP methods (GET, POST, DELETE) have specific semantic meanings in REST APIs</li>
+                            </ul>
+                        </div>
+                        <div class="journal-next">
+                            <strong>What's Next:</strong> Exploring database integration, user authentication, and advanced 
+                            backend features for production-ready applications.
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </section>
     </main>
