@@ -7,9 +7,22 @@
     <title>Prince Gurung - Weekly Journal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
     <header class="navbar">
         <button class="navbar-toggle" aria-label="Toggle navbar">
             <span class="hamburger-line"></span>
@@ -46,6 +59,12 @@
                     <a href="about.html">
                         <span class="nav-icon"><i class="fas fa-user"></i></span>
                         <span class="nav-text">About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tictactoe.html">
+                        <span class="nav-icon"><i class="fas fa-gamepad"></i></span>
+                        <span class="nav-text">Game</span>
                     </a>
                 </li>
             </ul>

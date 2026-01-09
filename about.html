@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Prince Gurung</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
     <header class="navbar">
         <button class="navbar-toggle" aria-label="Toggle navbar">
             <span class="hamburger-line"></span>
@@ -46,6 +61,12 @@
                         <span class="nav-text">About</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="tictactoe.html">
+                        <span class="nav-icon"><i class="fas fa-gamepad"></i></span>
+                        <span class="nav-text">Game</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- realtime clock shown in the sidebar -->
@@ -71,7 +92,8 @@
                     <strong>BSc (Hons) Computer Science Student</strong>
                 </p>
                 <p>
-                    I am a dedicated student with a keen interest in <b>Mobile Application Development</b> and responsive web design.
+                    I am a dedicated student with a keen interest in <b>Mobile Application Development</b> and
+                    responsive web design.
                 </p>
             </div>
         </section>
@@ -79,9 +101,11 @@
         <section class="content-section">
             <h2>My Focus</h2>
             <p>
-                My current focus is on building robust and accessible applications, starting with a strong foundation in modern frontend technologies like HTML, CSS, and JavaScript. I am passionate about creating clean code and intuitive user interfaces.
+                My current focus is on building robust and accessible applications, starting with a strong foundation in
+                modern frontend technologies like HTML, CSS, and JavaScript. I am passionate about creating clean code
+                and intuitive user interfaces.
             </p>
-            
+
             <h2>Skills & Interests</h2>
             <ul>
                 <li>Mobile Application Development</li>
@@ -90,7 +114,7 @@
                 <li>Frontend Technologies (HTML, CSS, JavaScript)</li>
                 <li>API Integration</li>
             </ul>
-            
+
             <h2>Contact Information</h2>
             <p>📧 Email: <a href="mailto:pg67709@gmail.com">pg67709@gmail.com</a></p>
         </section>
@@ -99,4 +123,5 @@
     <script src="js/location.js"></script>
     <script src="js/theme.js"></script>
 </body>
+
 </html>

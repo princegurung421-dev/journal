@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prince Gurung - Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
     <header class="navbar">
         <button class="navbar-toggle" aria-label="Toggle navbar">
             <span class="hamburger-line"></span>
@@ -46,6 +61,12 @@
                         <span class="nav-text">About</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="tictactoe.html">
+                        <span class="nav-icon"><i class="fas fa-gamepad"></i></span>
+                        <span class="nav-text">Game</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- realtime clock shown in the sidebar -->
@@ -66,15 +87,18 @@
         <section class="content-section">
             <h1>Prince Gurung's Technical Portfolio</h1>
             <p>A showcase of creative computing and development work completed during my course.</p>
-            
-            <article>
-                <h2>PWA Framework</h2>
+
+            <article class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <img src="images/project-icon.svg" alt="Project Icon" style="width: 40px; height: 40px;">
+                    <h2 style="margin-bottom: 0;">PWA Framework</h2>
+                </div>
                 <p>
                     <b>Technologies:</b> HTML5, CSS3 (Mobile-First, Flexbox/Grid).
                     This project is the PWA structure itself, demonstrating responsive frontend fundamentals.
                 </p>
             </article>
-            
+
             <article id="youtube-section" class="card">
                 <h2>Youtube API Demo</h2>
                 <p>Watch a short demo video below. Use the controls to play or pause.</p>
@@ -86,7 +110,7 @@
                     </div>
                 </div>
             </article>
-            
+
         </section>
     </main>
     <script src="js/clock.js"></script>
@@ -94,4 +118,5 @@
     <script src="js/thirdparty.js"></script>
     <script src="js/theme.js"></script>
 </body>
+
 </html>

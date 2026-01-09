@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prince Gurung - Personal Reflections</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
     <header class="navbar">
         <button class="navbar-toggle" aria-label="Toggle navbar">
             <span class="hamburger-line"></span>
@@ -46,6 +61,12 @@
                         <span class="nav-text">About</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="tictactoe.html">
+                        <span class="nav-icon"><i class="fas fa-gamepad"></i></span>
+                        <span class="nav-text">Game</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- realtime clock shown in the sidebar -->
@@ -80,23 +101,17 @@
                 <button id="toggle-form-btn" class="toggle-form-btn">
                     <i class="fas fa-plus-circle"></i> Add New Reflection
                 </button>
-                
+
                 <div id="reflection-form-container" class="reflection-form-container" style="display: none;">
                     <form id="reflection-form" class="reflection-form">
                         <h2><i class="fas fa-edit"></i> Create Reflection</h2>
-                        
+
                         <div class="form-group">
                             <label for="reflection-title">
                                 <i class="fas fa-heading"></i> Title *
                             </label>
-                            <input 
-                                type="text" 
-                                id="reflection-title" 
-                                name="title" 
-                                required 
-                                placeholder="Enter reflection title..."
-                                maxlength="200"
-                            >
+                            <input type="text" id="reflection-title" name="title" required
+                                placeholder="Enter reflection title..." maxlength="200">
                         </div>
 
                         <div class="form-group">
@@ -119,13 +134,8 @@
                             <label for="reflection-content">
                                 <i class="fas fa-align-left"></i> Reflection Content *
                             </label>
-                            <textarea 
-                                id="reflection-content" 
-                                name="content" 
-                                required 
-                                rows="8"
-                                placeholder="Write your reflection here... Share what you learned, challenges you faced, and insights you gained."
-                            ></textarea>
+                            <textarea id="reflection-content" name="content" required rows="8"
+                                placeholder="Write your reflection here... Share what you learned, challenges you faced, and insights you gained."></textarea>
                             <div class="char-counter">
                                 <span id="content-char-count">0</span> characters
                             </div>
@@ -137,12 +147,8 @@
                             </label>
                             <div id="learnings-container">
                                 <div class="learning-input-group">
-                                    <input 
-                                        type="text" 
-                                        class="learning-input" 
-                                        placeholder="Add a key learning..."
-                                        maxlength="150"
-                                    >
+                                    <input type="text" class="learning-input" placeholder="Add a key learning..."
+                                        maxlength="150">
                                     <button type="button" class="remove-learning-btn" style="display: none;">
                                         <i class="fas fa-times"></i>
                                     </button>
@@ -210,4 +216,5 @@
     <script src="js/reflections.js"></script>
     <script src="js/reflection-form.js"></script>
 </body>
+
 </html>
