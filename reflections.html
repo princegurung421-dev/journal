@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prince Gurung - Personal Reflections</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -106,7 +111,7 @@
                     <form id="reflection-form" class="reflection-form">
                         <h2><i class="fas fa-edit"></i> Create Reflection</h2>
 
-                        <div class="form-group">
+                        <div class="form-group half-width">
                             <label for="reflection-title">
                                 <i class="fas fa-heading"></i> Title *
                             </label>
@@ -114,7 +119,7 @@
                                 placeholder="Enter reflection title..." maxlength="200">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group half-width">
                             <label for="reflection-category">
                                 <i class="fas fa-tag"></i> Category
                             </label>
@@ -213,8 +218,8 @@
     <script src="js/clock.js"></script>
     <script src="js/location.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/reflections.js"></script>
-    <script src="js/reflection-form.js"></script>
+    <script type="module" src="js/reflections.js"></script>
+    <script type="module" src="js/reflection-form.js"></script>
 </body>
 
 </html>

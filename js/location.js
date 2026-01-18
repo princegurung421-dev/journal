@@ -1,4 +1,4 @@
-(async function(){
+(async function () {
   const el = document.getElementById('locations');
   if (!el) return;
   el.textContent = 'Locating...';
@@ -14,7 +14,7 @@
       if (!obj || !obj.ts) return null;
       if ((Date.now() - obj.ts) > CACHE_TTL_MS) {
         // expired
-        try { localStorage.removeItem(CACHE_KEY); } catch (e) {}
+        try { localStorage.removeItem(CACHE_KEY); } catch (e) { }
         return null;
       }
       return obj;
@@ -76,7 +76,7 @@
       const country = a.country;
       if (cityLike && country) return `${cityLike}, ${country}`;
       if (country) return country;
-      if (data.display_name) return data.display_name.split(',').slice(0,3).join(', ');
+      if (data.display_name) return data.display_name.split(',').slice(0, 3).join(', ');
       return null;
     } catch (e) {
       console.error('Reverse geocode error', e);
@@ -91,10 +91,10 @@
       if (!resp.ok) return null;
       const data = await resp.json();
       let place = null;
-      if (data.city && data.country_name) {
-        place = `${data.city}, ${data.country_name}`;
-      } else if (data.region && data.country_name) {
-        place = `${data.region}, ${data.country_name}`;
+      if (data.city && data.country_code) {
+        place = `${data.city}, ${data.country_code}`;
+      } else if (data.region_code && data.country_code) {
+        place = `${data.region_code}, ${data.country_code}`;
       }
       const lat = data.latitude || data.lat || null;
       const lon = data.longitude || data.lon || null;

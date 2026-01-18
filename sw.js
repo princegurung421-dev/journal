@@ -12,6 +12,8 @@ const ASSETS_TO_CACHE = [
     './js/location.js',
     './js/theme.js',
     './js/tictactoe.js',
+    './js/db.js',
+    './js/journal.js',
     './images/profile.jpeg',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
     'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap'

@@ -1,5 +1,15 @@
 [
     {
+        "id": "1768749901940",
+        "title": "hi",
+        "content": "sad",
+        "category": "General",
+        "learnings": [],
+        "date": "2026-01-18",
+        "timestamp": "2026-01-18T15:25:01.940Z",
+        "formatted_date": "January 18, 2026"
+    },
+    {
         "id": 1,
         "title": "Building My First Progressive Web App",
         "category": "JavaScript",
