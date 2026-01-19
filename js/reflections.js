@@ -309,3 +309,4 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+// Network Logic moved to js/network-status.js
