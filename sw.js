@@ -6,7 +6,7 @@
 //     falls back to the last cached response when offline.
 //   - Navigations that fail offline fall back to a cached page.
 
-const CACHE_NAME = 'learning-journal-v4';
+const CACHE_NAME = 'learning-journal-v5';
 
 // Local files that MUST be available offline. Kept separate from third-party
 // URLs so a single failed CDN request can never break the whole install.

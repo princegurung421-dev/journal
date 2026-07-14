@@ -13,7 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#22c3c3">
+    <meta name="theme-color" content="#28457a">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="images/favicon-64.png">
 </head>
@@ -99,11 +99,48 @@
             <article class="card">
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
                     <img src="images/project-icon.svg" alt="Project Icon" style="width: 40px; height: 40px;">
-                    <h2 style="margin-bottom: 0;">PWA Framework</h2>
+                    <h2 style="margin-bottom: 0;">Learning Journal PWA</h2>
                 </div>
                 <p>
-                    <b>Technologies:</b> HTML5, CSS3 (Mobile-First, Flexbox/Grid).
-                    This project is the PWA structure itself, demonstrating responsive frontend fundamentals.
+                    <b>Technologies:</b> HTML5, CSS3 (Mobile-First, Flexbox/Grid), JavaScript (ES6).
+                    The core project: a responsive, installable Progressive Web App that documents my
+                    Mobile Application Development journey week by week.
+                </p>
+            </article>
+
+            <article class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.8rem; color: var(--brand);"><i class="fas fa-server"></i></span>
+                    <h2 style="margin-bottom: 0;">Flask Backend &amp; JSON API</h2>
+                </div>
+                <p>
+                    <b>Technologies:</b> Python, Flask, JSON.
+                    A REST API that serves the whole app and lets me create, read and delete reflections.
+                    Data is stored server-side in JSON and the app is deployed on PythonAnywhere.
+                </p>
+            </article>
+
+            <article class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.8rem; color: var(--brand);"><i class="fas fa-cloud-arrow-down"></i></span>
+                    <h2 style="margin-bottom: 0;">Offline Sync Engine</h2>
+                </div>
+                <p>
+                    <b>Technologies:</b> Service Worker, IndexedDB, Cache API.
+                    Reflections written offline are saved locally in IndexedDB and automatically synced to
+                    the server the moment the connection returns — so no work is ever lost.
+                </p>
+            </article>
+
+            <article class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                    <span style="font-size: 1.8rem; color: var(--accent);"><i class="fas fa-gamepad"></i></span>
+                    <h2 style="margin-bottom: 0;">Tic-Tac-Toe (Mini Project)</h2>
+                </div>
+                <p>
+                    <b>Technologies:</b> JavaScript, DOM, CSS animations.
+                    An interactive two-player game with win detection and a restart control.
+                    <a href="tictactoe.html">Play it here &rarr;</a>
                 </p>
             </article>
 

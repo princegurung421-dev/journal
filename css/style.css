@@ -6,30 +6,30 @@
 
 :root {
     /* --- Brand & accent ------------------------------------------------ */
-    --brand: #0f9e9e;
-    /* teal — the journal's signature colour */
-    --brand-strong: #0b7d7d;
-    --brand-soft: #d5f0ef;
-    --brand-rgb: 15, 158, 158;
+    --brand: #28457a;
+    /* deep navy — the journal's signature colour */
+    --brand-strong: #1b3054;
+    --brand-soft: #e6ebf4;
+    --brand-rgb: 40, 69, 122;
 
     --accent: #e0674f;
-    /* warm coral — editorial contrast to the teal */
+    /* warm coral — editorial contrast to the navy */
     --accent-rgb: 224, 103, 79;
 
-    --warning: #e0912f;
+    --warning: #d98c2b;
     /* amber — used for offline / pending states */
-    --warning-rgb: 224, 145, 47;
+    --warning-rgb: 217, 140, 43;
 
     /* --- Neutrals (light / paper) ------------------------------------- */
-    --bg: #f4efe6;
+    --bg: #f5f2ec;
     /* warm paper */
-    --bg-2: #ece5d8;
+    --bg-2: #ebe6da;
     --surface: #ffffff;
-    --surface-2: #faf7f1;
-    --ink: #1e2b2a;
-    /* near-black with a teal undertone */
-    --ink-muted: #5d6f6d;
-    --hairline: rgba(30, 43, 42, 0.10);
+    --surface-2: #f8f6f1;
+    --ink: #1e2536;
+    /* near-black with a navy undertone */
+    --ink-muted: #5c667a;
+    --hairline: rgba(30, 37, 54, 0.10);
 
     /* legacy aliases still referenced by inline game styles */
     --primary-color: var(--brand);
@@ -43,8 +43,8 @@
     --text-light: #f4efe6;
 
     /* --- Navigation --------------------------------------------------- */
-    --nav-bg: #14201f;
-    --nav-text: #b9c8c6;
+    --nav-bg: #16233d;
+    --nav-text: #aeb9cd;
     --nav-text-active: #ffffff;
 
     /* --- Glass / cards ------------------------------------------------- */
@@ -67,21 +67,21 @@
 }
 
 [data-theme="dark"] {
-    --bg: #0e1817;
-    --bg-2: #12201e;
-    --surface: #172523;
-    --surface-2: #1c2c2a;
-    --ink: #eaf2f0;
-    --ink-muted: #94a8a5;
+    --bg: #0e1626;
+    --bg-2: #131f33;
+    --surface: #17233b;
+    --surface-2: #1c2942;
+    --ink: #e8edf6;
+    --ink-muted: #93a1bd;
     --hairline: rgba(255, 255, 255, 0.10);
 
-    --brand: #2fd4cf;
-    --brand-strong: #6ee7e2;
-    --brand-soft: rgba(47, 212, 207, 0.14);
-    --brand-rgb: 47, 212, 207;
+    --brand: #7ea0d8;
+    --brand-strong: #a5bde8;
+    --brand-soft: rgba(126, 160, 216, 0.15);
+    --brand-rgb: 126, 160, 216;
 
-    --nav-bg: #0a1413;
-    --nav-text: #8ba3a0;
+    --nav-bg: #0a1220;
+    --nav-text: #8b99b5;
 
     --glass-bg: rgba(23, 37, 35, 0.72);
     --glass-border: rgba(255, 255, 255, 0.08);
@@ -888,6 +888,54 @@ button {
 }
 
 .profile-info { flex: 1 1 260px; }
+
+/* --------------------------------------------------- Prose / content */
+.content-section h2 { margin-top: 2.25rem; }
+.content-section h2:first-child { margin-top: 0; }
+
+.content-section p { margin-bottom: 1rem; }
+
+/* Skill / tag chips (e.g. Skills on the About page) */
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.skill-list li {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    color: var(--ink);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-list li::before {
+    content: "\2713";
+    color: var(--brand);
+    font-weight: 700;
+}
+
+/* Info panel used for contact / callouts */
+.info-panel {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-left: 4px solid var(--brand);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    margin: 1rem 0 2rem;
+}
+
+.info-panel a { font-weight: 600; }
 
 /* --------------------------------------------------- Quick-link lists */
 aside.content-section ul { list-style: none; }
