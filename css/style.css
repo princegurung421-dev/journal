@@ -537,6 +537,18 @@ a {
 .journal-highlight ul { padding-left: 1.2rem; }
 .journal-highlight li { color: var(--ink); margin-bottom: 0.25rem; }
 
+/* Portfolio Q&A blocks inside journal accordion cards */
+.qa h4 {
+    margin: 1.4rem 0 0.4rem;
+    color: var(--brand-strong);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+}
+.qa h4:first-child { margin-top: 0; }
+.qa p { margin-bottom: 0.5rem; color: var(--ink); }
+.qa .qa-links { font-size: 0.92rem; }
+
 .journal-next {
     margin-top: 1.25rem;
     padding: 0.9rem 1.1rem;

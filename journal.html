@@ -560,6 +560,369 @@
 
             </div>
         </section>
+
+        <section class="content-section">
+            <h1>Portfolio Reflections</h1>
+            <p>My written answers to the portfolio questions for each lab. Tap a lab to open it.</p>
+
+            <div class="journal-entries">
+
+                <!-- Introduction -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Intro</span>
+                            <h2>Introduction</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <p>This portfolio documents how I built my Learning Journal, a Progressive Web App for
+                                the Mobile Application Development unit. My aim was to start from a plain HTML and CSS
+                                website and grow it, week by week, into a full app that works online and offline, can be
+                                installed on a phone, and talks to a Python server. Along the way I learned responsive
+                                mobile-first layouts, JavaScript and the DOM, then APIs, storing data in JSON with Python,
+                                and finally connecting a Flask backend and adding PWA features like a manifest and a
+                                service worker.</p>
+                            <p>The biggest thing I learned is how all these layers fit together — the browser, the
+                                storage, the server and the offline cache. The hardest part was making the PWA install
+                                correctly and deploying the whole app to PythonAnywhere rather than just the front page.
+                                I also added a Tic-Tac-Toe game as my mini project. This report reflects on each lab, the
+                                choices I made, the problems I ran into, and how I solved them.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 1 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 1</span>
+                            <h2>Introduction to Mobile App</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <p>In the first lab I set up the tools I would use for the rest of the unit. I installed
+                                VS Code as my editor because it is free and supports HTML, CSS, JavaScript and Python
+                                well. I created a GitHub account and a repository for my Learning Journal so I could save
+                                my work and keep a history with commits, and I learned the add, commit and push workflow
+                                that I used every week.</p>
+                            <p>I also set up a PythonAnywhere account, which is where my finished app runs online because
+                                it can host Python and Flask. I looked at Android Studio and some basic Kotlin code to
+                                understand how native Android apps are built, which helped me see why a PWA is a lighter
+                                alternative — it runs in the browser but can still be installed like an app.</p>
+                            <p>My main challenge was getting comfortable with Git. At first I did not understand the
+                                difference between committing locally and pushing to GitHub, and once my code was only on
+                                my computer. I fixed this by checking <code>git status</code> and pushing regularly, and I
+                                set up an SSH key so I could push securely without typing my password each time. By the end
+                                of the lab I had a working setup: an editor, a version-controlled repository, and a hosting
+                                account ready for the later labs.</p>
+                            <p class="qa-links"><strong>GitHub:</strong>
+                                <a href="https://github.com/princegurung421-dev/journal" target="_blank" rel="noopener">github.com/princegurung421-dev/journal</a><br>
+                                <strong>Live app (PythonAnywhere):</strong>
+                                <a href="https://princegrg.pythonanywhere.com" target="_blank" rel="noopener">princegrg.pythonanywhere.com</a></p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 2 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 2</span>
+                            <h2>Frontend Fundamentals</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>How did you approach mobile-first design?</h4>
+                            <p>I wrote my base CSS for small phone screens first, then added media queries
+                                (<code>@media (min-width: 768px)</code>) to adjust the layout for larger screens. For
+                                example, my navigation is a fixed bottom bar on mobile and becomes a sidebar on desktop.
+                                Designing for the smallest screen first meant the important content always fit, and
+                                scaling up was easier than squeezing a desktop design onto a phone.</p>
+                            <h4>What was the most useful HTML or CSS concept you applied this week?</h4>
+                            <p>The most useful concept was Flexbox together with CSS variables. Flexbox made it simple to
+                                line up items like my nav icons and cards without lots of floats. CSS variables such as
+                                <code>--brand</code> and <code>--bg</code> let me define my colours once and reuse them
+                                everywhere, which later made adding a light and dark theme easy — I just swapped the
+                                variable values.</p>
+                            <h4>What part of HTML or CSS did you find most challenging or confusing?</h4>
+                            <p>The most confusing part was making the navigation responsive. I wanted a vertical sidebar
+                                on desktop but a fixed bottom bar on mobile, and switching between them with media queries
+                                kept breaking the spacing. I also hit CSS specificity issues where styles were overridden
+                                unexpectedly. I solved it by using the browser DevTools to inspect which rules applied and
+                                by keeping my selectors simple.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 3 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 3</span>
+                            <h2>JavaScript &amp; DOM Manipulation</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>Which DOM selection methods did you use, and why did you choose them?</h4>
+                            <p>I mainly used <code>document.getElementById()</code> and
+                                <code>document.querySelector()</code>/<code>querySelectorAll()</code>. I used
+                                <code>getElementById</code> for single, known elements like the clock and the reflection
+                                form fields, because it is fast and clear. I used <code>querySelectorAll</code> when I
+                                needed several elements at once, such as all the nav links or all the accordion headers,
+                                so I could loop through them and add event listeners.</p>
+                            <h4>What was the most challenging part about linking JavaScript with your HTML?</h4>
+                            <p>The hardest part was making sure my JavaScript ran after the HTML existed. At first I put
+                                scripts in the head and the code could not find elements because they had not loaded yet.
+                                I fixed this by putting scripts at the end of the body and using the
+                                <code>DOMContentLoaded</code> event. Making the IDs and class names match exactly between
+                                the HTML and the JS also took care.</p>
+                            <h4>How did you test and debug your JavaScript code?</h4>
+                            <p>I tested mostly with the browser DevTools. I used <code>console.log()</code> to check
+                                values, the Console tab to read error messages, and the Elements tab to see if my classes
+                                were toggling. For the offline features I used the Network tab to switch to Offline and
+                                confirm the app still worked. Reading the red console errors line by line helped me find
+                                typos and wrong selectors.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 4 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 4</span>
+                            <h2>API</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>Which Storage, Browser, and Third-Party APIs did you choose, and why?</h4>
+                            <p>For storage I used the Web Storage API (<code>localStorage</code>) to remember the theme,
+                                and IndexedDB to store reflections written offline. For a browser API I used the
+                                <code>Intl</code> API to show the user's time zone and a live clock, plus
+                                <code>navigator.onLine</code> to detect the connection. For a third-party API I used the
+                                YouTube IFrame Player API to embed and control a video on my Projects page.</p>
+                            <h4>How did you integrate each API with DOM manipulation?</h4>
+                            <p>Each API updates the DOM. The clock writes the time into a element every second with
+                                <code>textContent</code>. The saved theme is applied by setting a <code>data-theme</code>
+                                attribute on the page. Reflections from IndexedDB and the server are turned into HTML
+                                cards and inserted with <code>innerHTML</code>. The YouTube API loads a player into a
+                                chosen element and my Play/Pause buttons call its methods.</p>
+                            <h4>What challenges did you encounter, and how did you solve them?</h4>
+                            <p>My biggest challenge was the location feature. I first used the Geolocation API, but it
+                                showed a permission popup every time and needed a network call to get the place name,
+                                which felt intrusive and did not work offline. I solved it by switching to the
+                                <code>Intl</code> time zone, which gives the user's city and GMT offset instantly, with no
+                                popup and no network.</p>
+                            <h4>In what ways do these APIs improve your Learning Journal PWA?</h4>
+                            <p>They make the app feel alive and personal. The clock and time zone give real-time context,
+                                the theme storage remembers the user's preference between visits, IndexedDB lets people
+                                keep writing when offline, and the YouTube embed adds useful learning content. Together
+                                they turn a static website into an interactive app that responds to the user and their
+                                device.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 5 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 5</span>
+                            <h2>Python &amp; JSON</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>How is storing data in a JSON file different from using browser storage?</h4>
+                            <p>A JSON file on the server is shared and permanent — every visitor sees the same data and it
+                                stays after the browser is closed. Browser storage like localStorage or IndexedDB is
+                                private to one device and one browser, so another user or computer would not see it. The
+                                JSON file is good for content everyone should see; browser storage is good for personal or
+                                offline data.</p>
+                            <h4>How did you use Python to create or update your JSON file?</h4>
+                            <p>I wrote a Python script (<code>save_entry.py</code>) that opens <code>reflections.json</code>,
+                                loads it with the <code>json</code> module into a list, adds a new reflection as a
+                                dictionary, and writes it back with <code>json.dump()</code>. Later my Flask app does the
+                                same inside its API routes — it reads the file, inserts or removes an entry, and saves it
+                                again, so the JSON file is always up to date.</p>
+                            <h4>What does your PWA show locally, and what will users see on GitHub? Are they the same?</h4>
+                            <p>They are not the same. On my computer the Flask server runs, so I can add and delete
+                                reflections and the JSON file updates. On GitHub Pages only the static files are served —
+                                there is no Python running, so the API calls fail and saving does not work. That is why I
+                                deployed the full app to PythonAnywhere, which can run the backend, and use GitHub only to
+                                store the code.</p>
+                            <h4>What extra feature did you add to your PWA using the JSON file, and why?</h4>
+                            <p>I added an export and import feature. The user can download all their reflections as a JSON
+                                file to back them up, and import a JSON file to restore them. I added this because the data
+                                is already in JSON, so it was a natural way to let users keep their own copy and move it
+                                between devices.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 6 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 6</span>
+                            <h2>Frontend &amp; Backend</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>Why is the frontend–backend connection important?</h4>
+                            <p>The connection lets the app do things the browser alone cannot. The front end handles what
+                                the user sees and clicks, while the back end stores data permanently and shares it between
+                                users and devices. Without the backend, reflections would only live in one browser.
+                                Connecting them means a reflection I save is written to the server and is still there when
+                                I reopen the app anywhere.</p>
+                            <h4>Which HTTP methods did you use in Flask, and why?</h4>
+                            <p>I used GET and POST. GET is for reading data — my page calls
+                                <code>GET /api/reflections</code> to load all entries. POST is for sending data —
+                                <code>POST /api/save_reflection</code> adds a new one and
+                                <code>POST /api/delete_reflection</code> removes one. I used POST for delete instead of the
+                                DELETE method because some hosts block DELETE, and POST works reliably everywhere.</p>
+                            <h4>What is the difference between using Flask to store and load JSON data and reading JSON
+                                directly in the browser?</h4>
+                            <p>Reading JSON directly in the browser is read-only — the browser can fetch the file but
+                                cannot change it. With Flask the server can both read and write the file, so the app can
+                                actually add and delete data. Flask also runs the logic in one central place, so all users
+                                share the same up-to-date data instead of each having a separate copy.</p>
+                            <h4>Did you face any difficulties when running your project on PythonAnywhere?</h4>
+                            <p>Yes. At first only the static journal worked online, because I had used Python's simple
+                                <code>http.server</code>, which does not run properly on PythonAnywhere. I fixed this by
+                                rewriting the backend as a Flask app. I then pointed PythonAnywhere's WSGI file at my
+                                <code>app.py</code>, cloned the code from GitHub with <code>git clone</code>, and reloaded
+                                the web app. Getting the file path right in the WSGI file was the main fix.</p>
+                            <h4>What extra feature did you build into your PWA with Flask, and why did you add it?</h4>
+                            <p>With Flask I added server-side saving and deleting of reflections through a REST API, so
+                                entries persist for everyone, not just in one browser. I also made Flask serve the whole
+                                app — every page, the manifest and the service worker — from one place, which keeps the
+                                front end and API on the same origin and makes the fetch calls simple and reliable.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lab 7 -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Lab 7</span>
+                            <h2>PWA</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>Why is it useful to enhance your Flask app with PWA features?</h4>
+                            <p>PWA features make my Flask app behave like a real mobile app. Users can install it on their
+                                home screen, open it in its own window without the browser bar, and still use it when the
+                                network is poor or gone. This improves reliability and the experience, while I keep the
+                                simplicity of building with web technologies and one Flask server.</p>
+                            <h4>What did you use to support offline access and dynamic data?</h4>
+                            <p>For offline access I used a service worker with the Cache API to store the pages, CSS, JS
+                                and icons, so the app loads without a network. For dynamic data I used IndexedDB to save
+                                reflections written offline, and <code>navigator.onLine</code> with online/offline events
+                                to detect the connection. When the connection returns, my code syncs the saved entries to
+                                the Flask server automatically.</p>
+                            <h4>What extra feature did you add, and why?</h4>
+                            <p>My extra PWA feature is automatic offline sync with a status toast. If I write a reflection
+                                while offline it is stored in IndexedDB and shown with an "offline / pending" badge. When
+                                the device reconnects, a small toast appears, the entry is sent to the server, and the
+                                badge clears. I added this so users never lose work and can see what is happening.</p>
+                            <h4>Did you face any challenges deploying your PWA, and how did you solve them?</h4>
+                            <p>Yes. The app would not install — the browser said the manifest had no valid icon. I found
+                                the manifest pointed to icon files that did not exist, so I created proper 192px and 512px
+                                PNG icons plus a maskable icon, and the install prompt then appeared. I also had to serve
+                                everything over HTTPS on PythonAnywhere, which browsers require before a PWA can be
+                                installed.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mini Project -->
+                <article class="journal-card">
+                    <div class="journal-header">
+                        <div class="journal-title-section">
+                            <span class="week-badge">Mini Project</span>
+                            <h2>Tic-Tac-Toe Game</h2>
+                        </div>
+                        <button class="journal-toggle" aria-label="Toggle entry"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="journal-content">
+                        <div class="qa">
+                            <h4>What additional features did you add to your Learning Journal?</h4>
+                            <p>For my mini project I added a Tic-Tac-Toe game. It is a two-player game built with the DOM:
+                                a three-by-three grid of cells that players click to place X or O. The game tracks whose
+                                turn it is and shows it above the board, checks after every move for the eight winning
+                                lines, and highlights the winning row with a pulsing animation. If all cells fill with no
+                                winner it declares a draw, and a Restart button clears the board. I styled the board to
+                                match the rest of the app, using the same navy and coral theme and the light and dark
+                                modes, and made it responsive so the cells shrink to fit a phone. Beyond the game, the
+                                wider journal gained several features that support the main app: writing and deleting
+                                reflections through a form, searching them by keyword, exporting and importing them as
+                                JSON, a live clock and time zone, a light/dark theme, and offline saving with automatic
+                                sync. Together these turn a simple journal into an interactive app with a bit of fun built
+                                in.</p>
+                            <h4>Why did you choose your mini project idea?</h4>
+                            <p>I chose Tic-Tac-Toe because it was a realistic size for the four weeks I had, but it still
+                                let me show real programming skills rather than just copying a tutorial. It uses the same
+                                DOM and event-handling ideas I learned earlier in the unit — selecting elements, listening
+                                for clicks and updating the page — so it built naturally on my existing knowledge instead
+                                of needing a whole new technology. A game also fits the theme of a learning journal: it
+                                gives the user a short, enjoyable break between writing reflections, which makes the app
+                                more engaging. Tic-Tac-Toe has clear, simple rules, so I could focus my effort on writing
+                                clean logic — tracking turns, detecting a win across rows, columns and diagonals, and
+                                handling a draw — and on making the interface look good and work on mobile. It was also a
+                                good way to practise keeping game state in JavaScript and reflecting that state back into
+                                the DOM. Finally, it was something I could finish and polish properly, which mattered
+                                because a small feature that works well shows more skill than a large one left broken.</p>
+                            <h4>What technical challenges did you face and how did you solve them?</h4>
+                            <p>The trickiest part of the game was the win-checking logic. I stored the board as an array
+                                and had to compare the right combinations of cells for all eight winning lines, while
+                                making sure the game stopped once someone won. I fixed this by writing a list of the
+                                winning index patterns and looping through them after each turn, then disabling further
+                                clicks when a win or draw was found. Matching the game to the rest of the app was another
+                                challenge, because it originally used hard-coded teal colours that clashed after I changed
+                                the theme; I replaced those with the shared CSS variables so the game follows the light
+                                and dark themes automatically. Outside the game, the hardest overall challenge was the PWA
+                                install failing because the manifest referenced icons that did not exist — I created the
+                                missing icons and it worked. Deployment was also difficult: at first only the journal
+                                worked online because I had used a simple Python server, so I rewrote the backend in Flask
+                                and deployed it to PythonAnywhere from GitHub. Testing offline in DevTools helped me
+                                confirm each fix.</p>
+                            <h4>What would you improve if given more time?</h4>
+                            <p>If I had more time I would add user accounts so each person has their own private
+                                reflections behind a login, instead of everyone sharing one file. I would move the data
+                                from a JSON file into a proper database like SQLite, which would handle many entries more
+                                safely and make searching faster. For the game, I would add a single-player mode against
+                                the computer, a scoreboard that remembers wins, and sound effects. I would also improve
+                                accessibility — better keyboard navigation, focus styles and screen-reader labels — so
+                                more people can use the app comfortably. On the PWA side I would add push notifications to
+                                remind users to write a reflection, and background sync so pending entries send even after
+                                the app is closed. Finally, I would write automated tests for the API and the game logic
+                                so I could change the code with more confidence, and spend more time on the visual design
+                                and animations. These changes would take the project from a strong coursework app towards
+                                something closer to a real product.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
     </main>
 
     <!-- Scripts -->
