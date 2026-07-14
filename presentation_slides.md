@@ -37,7 +37,7 @@
 ---
 
 ## Slide 4: Technical Stack - Backend & Data
-- **Backend:** Python `http.server` (Custom Implementation).
+- **Backend:** Python Flask (deployed on PythonAnywhere).
     - RESTful API endpoints (`GET`, `POST`, `DELETE`).
     - Robust path handling for static file serving.
 - **Database (Persistence):** JSON File Storage (`reflections.json`).
@@ -111,7 +111,7 @@
 ---
 
 ## Slide 12: Backend Logic (Python)
-- **Custom Server:** Extended `SimpleHTTPRequestHandler`.
+- **Flask Server:** Serves the PWA and JSON API over HTTPS.
 - **API Endpoints:**
     - `GET /api/reflections`: Returns JSON data.
     - `POST /api/save_reflection`: Appends new entry.

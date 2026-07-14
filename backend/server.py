@@ -1,3 +1,7 @@
+# NOTE: This is the original Lab 5/6 development server (Python http.server).
+# It has been SUPERSEDED by the Flask backend in ../app.py, which is the
+# backend used for deployment (PythonAnywhere). This file is kept only as a
+# record of the earlier lab work. To run the app, use:  python app.py
 import http.server
 import socketserver
 import json

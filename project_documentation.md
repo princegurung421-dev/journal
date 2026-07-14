@@ -8,7 +8,7 @@
 ---
 
 ## 1. Executive Summary
-The Learning Journal PWA is a Progressive Web Application designed to serve as a personal digital logbook for students. It allows users to create, view, delete, and manage daily learning reflections. Built with a "Mobile-First" approach, the application offers a native-app-like experience, functioning seamlessly offline through robust Service Worker caching and IndexedDB data persistence. The backend is powered by a custom Python HTTP server handling RESTful API requests, ensuring data persistence in a portable JSON format.
+The Learning Journal PWA is a Progressive Web Application designed to serve as a personal digital logbook for students. It allows users to create, view, delete, and manage daily learning reflections. Built with a "Mobile-First" approach, the application offers a native-app-like experience, functioning seamlessly offline through robust Service Worker caching and IndexedDB data persistence. The backend is powered by a Flask web server handling RESTful API requests, ensuring data persistence in a portable JSON format.
 
 ## 2. Project Overview
 ### 2.1 Objectives
@@ -30,7 +30,7 @@ The project follows a client-server architecture with a distinct separation of c
   - **IndexedDB:** Client-side storage for offline data.
 
 - **Backend (Server):**
-  - **Python (`http.server`):** Handles HTTP requests.
+  - **Python (Flask):** Serves the app and handles API requests.
   - **JSON Storage:** Acts as a lightweight NoSQL database.
   - **REST API:** Exposes endpoints for data manipulation.
 
@@ -46,7 +46,7 @@ The project follows a client-server architecture with a distinct separation of c
 
 ### 4.2 Backend Technologies
 - **Language:** Python 3.x
-- **Server:** Custom `SimpleHTTPRequestHandler` extension.
+- **Server:** Flask (WSGI) application, deployed on PythonAnywhere.
 - **Data Store:** `reflections.json` (Flat-file database).
 
 ### 4.3 Key Features

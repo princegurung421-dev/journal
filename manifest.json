@@ -1,21 +1,33 @@
 {
     "name": "Prince's Learning Journal",
     "short_name": "Learning Journal",
+    "description": "A Progressive Web App to document my Mobile Application Development learning journey - weekly reflections, projects, and a game.",
+    "id": "/index.html",
     "start_url": "index.html",
+    "scope": "./",
     "display": "standalone",
     "background_color": "#f0f4f8",
     "theme_color": "#22c3c3",
     "orientation": "portrait-primary",
+    "categories": ["education", "productivity"],
     "icons": [
         {
             "src": "images/icon-192.png",
             "type": "image/png",
-            "sizes": "192x192"
+            "sizes": "192x192",
+            "purpose": "any"
         },
         {
             "src": "images/icon-512.png",
             "type": "image/png",
-            "sizes": "512x512"
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "images/icon-maskable-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
         }
     ]
 }

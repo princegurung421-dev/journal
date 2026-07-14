@@ -17,7 +17,7 @@
     - **HTML5 & CSS3:** Semantic structure, Glassmorphism design, Responsive (Flexbox/Grid).
     - **JavaScript (ES6+):** Modular architecture, Async/Await, DOM Manipulation.
 - **Backend:**
-    - **Python:** Custom `http.server` extending `SimpleHTTPRequestHandler` for RESTful API (`GET`, `POST`, `DELETE`).
+    - **Python (Flask):** RESTful API (`GET`, `POST`) for reflections.
 - **Persistence:**
     - **Database:** JSON File Storage (`reflections.json`) for backend.
     - **Client-Side:** IndexedDB for robust offline data storage.
